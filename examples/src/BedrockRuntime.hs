@@ -20,6 +20,9 @@ import System.IO
 -- region you call from, you may need the @eu.@ or @apac.@ prefix instead, or a
 -- different model entirely - see
 -- <https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles-support.html>.
+--
+-- .. or use:
+-- aws --profile staging-PI bedrock list-foundation-models --by-provider anthropic --query 'modelSummaries[].modelId'
 defaultModelId :: Text
 defaultModelId = "us.anthropic.claude-haiku-4-5-20251001-v1:0"
 
