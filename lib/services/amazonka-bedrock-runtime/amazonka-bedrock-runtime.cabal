@@ -234,6 +234,7 @@ library
     Amazonka.BedrockRuntime.Waiters
 
   build-depends:
+    , aeson
     , amazonka-core  >=2.0  && <2.1
     , base           >=4.12 && <5
 

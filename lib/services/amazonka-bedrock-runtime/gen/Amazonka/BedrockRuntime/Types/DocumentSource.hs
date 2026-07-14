@@ -19,6 +19,7 @@
 -- Portability : non-portable (GHC extensions)
 module Amazonka.BedrockRuntime.Types.DocumentSource where
 
+import Amazonka.BedrockRuntime.Types.Document
 import Amazonka.BedrockRuntime.Types.DocumentContentBlock
 import Amazonka.BedrockRuntime.Types.S3Location
 import qualified Amazonka.Core as Core

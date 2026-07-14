@@ -19,6 +19,7 @@
 -- Portability : non-portable (GHC extensions)
 module Amazonka.BedrockRuntime.Types.GuardrailContextualGroundingPolicyAssessment where
 
+import Amazonka.BedrockRuntime.Types.Document
 import Amazonka.BedrockRuntime.Types.GuardrailContextualGroundingFilter
 import qualified Amazonka.Core as Core
 import qualified Amazonka.Core.Lens.Internal as Lens

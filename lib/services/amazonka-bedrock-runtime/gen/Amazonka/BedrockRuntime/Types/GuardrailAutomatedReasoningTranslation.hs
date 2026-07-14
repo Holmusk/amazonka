@@ -19,6 +19,7 @@
 -- Portability : non-portable (GHC extensions)
 module Amazonka.BedrockRuntime.Types.GuardrailAutomatedReasoningTranslation where
 
+import Amazonka.BedrockRuntime.Types.Document
 import Amazonka.BedrockRuntime.Types.GuardrailAutomatedReasoningInputTextReference
 import Amazonka.BedrockRuntime.Types.GuardrailAutomatedReasoningStatement
 import qualified Amazonka.Core as Core

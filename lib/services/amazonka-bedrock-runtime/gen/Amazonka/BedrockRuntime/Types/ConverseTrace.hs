@@ -19,6 +19,7 @@
 -- Portability : non-portable (GHC extensions)
 module Amazonka.BedrockRuntime.Types.ConverseTrace where
 
+import Amazonka.BedrockRuntime.Types.Document
 import Amazonka.BedrockRuntime.Types.GuardrailTraceAssessment
 import Amazonka.BedrockRuntime.Types.PromptRouterTrace
 import qualified Amazonka.Core as Core

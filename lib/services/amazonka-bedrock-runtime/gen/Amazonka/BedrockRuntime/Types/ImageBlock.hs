@@ -19,6 +19,7 @@
 -- Portability : non-portable (GHC extensions)
 module Amazonka.BedrockRuntime.Types.ImageBlock where
 
+import Amazonka.BedrockRuntime.Types.Document
 import Amazonka.BedrockRuntime.Types.ErrorBlock
 import Amazonka.BedrockRuntime.Types.ImageFormat
 import Amazonka.BedrockRuntime.Types.ImageSource

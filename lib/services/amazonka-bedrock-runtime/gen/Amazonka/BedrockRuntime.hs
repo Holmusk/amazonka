@@ -112,6 +112,9 @@ module Amazonka.BedrockRuntime
 
     -- * Types
 
+    -- ** Common
+    module Amazonka.BedrockRuntime.Types.Document,
+
     -- ** AsyncInvokeStatus
     AsyncInvokeStatus (..),
 
@@ -331,10 +334,6 @@ module Amazonka.BedrockRuntime
     -- ** CountTokensInput
     CountTokensInput (CountTokensInput'),
     newCountTokensInput,
-
-    -- ** Document
-    Document (Document'),
-    newDocument,
 
     -- ** DocumentBlock
     DocumentBlock (DocumentBlock'),
@@ -780,6 +779,7 @@ import Amazonka.BedrockRuntime.Lens
 import Amazonka.BedrockRuntime.ListAsyncInvokes
 import Amazonka.BedrockRuntime.StartAsyncInvoke
 import Amazonka.BedrockRuntime.Types
+import Amazonka.BedrockRuntime.Types.Document
 import Amazonka.BedrockRuntime.Waiters
 
 -- $errors

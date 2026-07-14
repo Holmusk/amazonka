@@ -19,6 +19,7 @@
 -- Portability : non-portable (GHC extensions)
 module Amazonka.BedrockRuntime.Types.CitationLocation where
 
+import Amazonka.BedrockRuntime.Types.Document
 import Amazonka.BedrockRuntime.Types.DocumentCharLocation
 import Amazonka.BedrockRuntime.Types.DocumentChunkLocation
 import Amazonka.BedrockRuntime.Types.DocumentPageLocation

@@ -1,3 +1,13 @@
 {
-  "libraryName": "amazonka-bedrock-runtime"
+  "libraryName": "amazonka-bedrock-runtime",
+  "extraDependencies": ["aeson"],
+  "typeModules": ["Amazonka.BedrockRuntime.Types.Document"],
+  "typeOverrides": {
+    "Document": {
+      "replacedBy": {
+        "name": "Document",
+        "underive": []
+      }
+    }
+  }
 }

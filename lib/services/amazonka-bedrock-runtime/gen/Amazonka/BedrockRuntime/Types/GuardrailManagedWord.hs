@@ -19,6 +19,7 @@
 -- Portability : non-portable (GHC extensions)
 module Amazonka.BedrockRuntime.Types.GuardrailManagedWord where
 
+import Amazonka.BedrockRuntime.Types.Document
 import Amazonka.BedrockRuntime.Types.GuardrailManagedWordType
 import Amazonka.BedrockRuntime.Types.GuardrailWordPolicyAction
 import qualified Amazonka.Core as Core

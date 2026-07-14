@@ -20,6 +20,7 @@
 module Amazonka.BedrockRuntime.Types.SearchResultBlock where
 
 import Amazonka.BedrockRuntime.Types.CitationsConfig
+import Amazonka.BedrockRuntime.Types.Document
 import Amazonka.BedrockRuntime.Types.SearchResultContentBlock
 import qualified Amazonka.Core as Core
 import qualified Amazonka.Core.Lens.Internal as Lens

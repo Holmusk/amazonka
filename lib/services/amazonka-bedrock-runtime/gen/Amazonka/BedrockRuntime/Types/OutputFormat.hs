@@ -19,6 +19,7 @@
 -- Portability : non-portable (GHC extensions)
 module Amazonka.BedrockRuntime.Types.OutputFormat where
 
+import Amazonka.BedrockRuntime.Types.Document
 import Amazonka.BedrockRuntime.Types.OutputFormatStructure
 import Amazonka.BedrockRuntime.Types.OutputFormatType
 import qualified Amazonka.Core as Core

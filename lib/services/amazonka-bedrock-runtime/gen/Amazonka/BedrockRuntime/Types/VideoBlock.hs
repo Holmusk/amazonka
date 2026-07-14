@@ -19,6 +19,7 @@
 -- Portability : non-portable (GHC extensions)
 module Amazonka.BedrockRuntime.Types.VideoBlock where
 
+import Amazonka.BedrockRuntime.Types.Document
 import Amazonka.BedrockRuntime.Types.VideoFormat
 import Amazonka.BedrockRuntime.Types.VideoSource
 import qualified Amazonka.Core as Core

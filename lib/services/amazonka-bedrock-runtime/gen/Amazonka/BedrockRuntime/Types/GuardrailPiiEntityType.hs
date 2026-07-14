@@ -55,6 +55,7 @@ module Amazonka.BedrockRuntime.Types.GuardrailPiiEntityType
   )
 where
 
+import Amazonka.BedrockRuntime.Types.Document
 import qualified Amazonka.Core as Core
 import qualified Amazonka.Data as Data
 import qualified Amazonka.Prelude as Prelude

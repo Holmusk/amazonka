@@ -24,9 +24,47 @@ git clone --depth 1 https://github.com/boto/botocore /tmp/botocore
 
 ```json
 {
-  "libraryName": "amazonka-bedrock-runtime"
+  "libraryName": "amazonka-bedrock-runtime",
+  "extraDependencies": [
+    "aeson"
+  ],
+  "typeModules": [
+    "Amazonka.BedrockRuntime.Types.Document"
+  ],
+  "typeOverrides": {
+    "Document": {
+      "replacedBy": {
+        "name": "Document",
+        "underive": []
+      }
+    }
+  }
 }
 ```
+
+The `Document` shape (arbitrary JSON: `toolUse.input`, tool input schemas,
+`additionalModelRequestFields`, ...) would otherwise be generated as an
+*empty record* that silently drops JSON content, breaking tool use. The
+`replacedBy` override tells the generator to not generate the shape and
+reference a hand-written type instead — the same mechanism amazonka-dynamodb
+uses for `AttributeValue`:
+
+- **`typeOverrides.Document.replacedBy`** — substitutes the named type for
+  the shape everywhere. `underive: []` keeps the full `derivingBase`
+  (`Eq, Read, Show, Generic, Hashable, NFData`), all of which the
+  hand-written newtype over `Aeson.Value` satisfies.
+- **`typeModules`** — modules listed here are added to the cabal
+  `exposed-modules`, imported by every generated module, and re-exported
+  from `Amazonka.BedrockRuntime.Types`.
+- **`extraDependencies`** — appended to the cabal `build-depends`
+  (the hand-written module needs `aeson`).
+
+The hand-written module itself lives at
+`lib/services/amazonka-bedrock-runtime/src/Amazonka/BedrockRuntime/Types/Document.hs`
+(the generated cabal file always has `hs-source-dirs: src gen`, so `src/` is
+picked up automatically). It defines
+`newtype Document = Document' { value :: Aeson.Value }` with pass-through
+`ToJSON`/`FromJSON`.
 
 ## 3. Create the annex
 
@@ -96,7 +134,10 @@ nix develop --command bash -c 'BOTOCORE=/tmp/botocore ./scripts/generate bedrock
 Output lands in `lib/services/amazonka-bedrock-runtime/`. When re-running
 after an annex change, `rm -rf lib/services/amazonka-bedrock-runtime` first —
 the script only replaces the `gen/` subdirectory wholesale, so files belonging
-to since-removed operations (e.g. fixtures) would otherwise linger.
+to since-removed operations (e.g. fixtures) would otherwise linger. Note that
+this also deletes the hand-written `src/Amazonka/BedrockRuntime/Types/Document.hs`
+(see step 2) — restore it afterwards with
+`git checkout -- lib/services/amazonka-bedrock-runtime/src`.
 
 ## 5. Build it
 
@@ -137,14 +178,13 @@ API shape notes for writing code against the generated library:
 - Union shapes (`ContentBlock`, `ConverseOutput`, ... — `"union": true` in the
   model) degrade to all-`Maybe` records. Wire-compatible, but the one-member
   invariant isn't enforced by the types.
-- The `Document` shape (arbitrary JSON: `toolUse.input`,
-  `additionalModelRequestFields`, tool-result `json`) is generated as an
-  *empty record*, so tool-use round-trips would silently drop JSON content.
-  Plain text conversations and raw `InvokeModel` (whose body is a blob) are
-  unaffected. Fixing this would be the next annex iteration — the established
-  trick is `{"type": "json"}` (→ `ByteString`, precedent in the apigateway /
-  lambda / iot-data annexes), but those uses are whole-body payloads; an
-  embedded field is unverified.
+- ~~The `Document` shape is generated as an empty record~~ — fixed via the
+  `replacedBy` override + hand-written module (see step 2). For the record:
+  the `{"type": "json"}` annex trick considered earlier would not have worked
+  for embedded fields — it maps the shape to bare `ByteString`, and
+  amazonka-core has no `ToJSON ByteString` instance, so only whole-body
+  payloads (the apigateway / lambda / iot-data precedents, which go through
+  `ToBody`) can use it.
 
 ## Vendoring into another project
 

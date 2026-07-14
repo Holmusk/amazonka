@@ -19,6 +19,7 @@
 -- Portability : non-portable (GHC extensions)
 module Amazonka.BedrockRuntime.Types.GuardrailInvocationMetrics where
 
+import Amazonka.BedrockRuntime.Types.Document
 import Amazonka.BedrockRuntime.Types.GuardrailCoverage
 import Amazonka.BedrockRuntime.Types.GuardrailUsage
 import qualified Amazonka.Core as Core

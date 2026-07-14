@@ -21,6 +21,7 @@ module Amazonka.BedrockRuntime.Types.ToolChoice where
 
 import Amazonka.BedrockRuntime.Types.AnyToolChoice
 import Amazonka.BedrockRuntime.Types.AutoToolChoice
+import Amazonka.BedrockRuntime.Types.Document
 import Amazonka.BedrockRuntime.Types.SpecificToolChoice
 import qualified Amazonka.Core as Core
 import qualified Amazonka.Core.Lens.Internal as Lens

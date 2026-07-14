@@ -20,6 +20,7 @@
 module Amazonka.BedrockRuntime.Types.DocumentBlock where
 
 import Amazonka.BedrockRuntime.Types.CitationsConfig
+import Amazonka.BedrockRuntime.Types.Document
 import Amazonka.BedrockRuntime.Types.DocumentFormat
 import Amazonka.BedrockRuntime.Types.DocumentSource
 import qualified Amazonka.Core as Core

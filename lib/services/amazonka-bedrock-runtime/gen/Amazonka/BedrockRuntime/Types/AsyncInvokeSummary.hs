@@ -21,6 +21,7 @@ module Amazonka.BedrockRuntime.Types.AsyncInvokeSummary where
 
 import Amazonka.BedrockRuntime.Types.AsyncInvokeOutputDataConfig
 import Amazonka.BedrockRuntime.Types.AsyncInvokeStatus
+import Amazonka.BedrockRuntime.Types.Document
 import qualified Amazonka.Core as Core
 import qualified Amazonka.Core.Lens.Internal as Lens
 import qualified Amazonka.Data as Data

@@ -26,6 +26,7 @@ module Amazonka.BedrockRuntime.Types.GuardrailImageFormat
   )
 where
 
+import Amazonka.BedrockRuntime.Types.Document
 import qualified Amazonka.Core as Core
 import qualified Amazonka.Data as Data
 import qualified Amazonka.Prelude as Prelude

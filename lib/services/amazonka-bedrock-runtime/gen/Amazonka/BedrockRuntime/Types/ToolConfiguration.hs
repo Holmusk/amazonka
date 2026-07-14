@@ -19,6 +19,7 @@
 -- Portability : non-portable (GHC extensions)
 module Amazonka.BedrockRuntime.Types.ToolConfiguration where
 
+import Amazonka.BedrockRuntime.Types.Document
 import Amazonka.BedrockRuntime.Types.Tool
 import Amazonka.BedrockRuntime.Types.ToolChoice
 import qualified Amazonka.Core as Core

@@ -225,8 +225,6 @@ module Amazonka.BedrockRuntime.Lens
     countTokensInput_converse,
     countTokensInput_invokeModel,
 
-    -- ** Document
-
     -- ** DocumentBlock
     documentBlock_citations,
     documentBlock_context,
@@ -737,7 +735,6 @@ import Amazonka.BedrockRuntime.Types.ConverseOutput
 import Amazonka.BedrockRuntime.Types.ConverseTokensRequest
 import Amazonka.BedrockRuntime.Types.ConverseTrace
 import Amazonka.BedrockRuntime.Types.CountTokensInput
-import Amazonka.BedrockRuntime.Types.Document
 import Amazonka.BedrockRuntime.Types.DocumentBlock
 import Amazonka.BedrockRuntime.Types.DocumentCharLocation
 import Amazonka.BedrockRuntime.Types.DocumentChunkLocation

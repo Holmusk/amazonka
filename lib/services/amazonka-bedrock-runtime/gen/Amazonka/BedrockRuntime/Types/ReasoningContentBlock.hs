@@ -19,6 +19,7 @@
 -- Portability : non-portable (GHC extensions)
 module Amazonka.BedrockRuntime.Types.ReasoningContentBlock where
 
+import Amazonka.BedrockRuntime.Types.Document
 import Amazonka.BedrockRuntime.Types.ReasoningTextBlock
 import qualified Amazonka.Core as Core
 import qualified Amazonka.Core.Lens.Internal as Lens

@@ -21,6 +21,7 @@ module Amazonka.BedrockRuntime.Types.CitationsContentBlock where
 
 import Amazonka.BedrockRuntime.Types.Citation
 import Amazonka.BedrockRuntime.Types.CitationGeneratedContent
+import Amazonka.BedrockRuntime.Types.Document
 import qualified Amazonka.Core as Core
 import qualified Amazonka.Core.Lens.Internal as Lens
 import qualified Amazonka.Data as Data

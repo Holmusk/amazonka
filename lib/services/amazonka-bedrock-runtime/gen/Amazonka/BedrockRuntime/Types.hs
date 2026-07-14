@@ -31,6 +31,9 @@ module Amazonka.BedrockRuntime.Types
     _ThrottlingException,
     _ValidationException,
 
+    -- * Re-exported Types
+    module Amazonka.BedrockRuntime.Types.Document,
+
     -- * AsyncInvokeStatus
     AsyncInvokeStatus (..),
 
@@ -313,10 +316,6 @@ module Amazonka.BedrockRuntime.Types
     newCountTokensInput,
     countTokensInput_converse,
     countTokensInput_invokeModel,
-
-    -- * Document
-    Document (..),
-    newDocument,
 
     -- * DocumentBlock
     DocumentBlock (..),

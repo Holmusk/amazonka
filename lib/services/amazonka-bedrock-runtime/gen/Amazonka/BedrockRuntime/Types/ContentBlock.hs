@@ -22,6 +22,7 @@ module Amazonka.BedrockRuntime.Types.ContentBlock where
 import Amazonka.BedrockRuntime.Types.AudioBlock
 import Amazonka.BedrockRuntime.Types.CachePointBlock
 import Amazonka.BedrockRuntime.Types.CitationsContentBlock
+import Amazonka.BedrockRuntime.Types.Document
 import Amazonka.BedrockRuntime.Types.DocumentBlock
 import Amazonka.BedrockRuntime.Types.GuardrailConverseContentBlock
 import Amazonka.BedrockRuntime.Types.ImageBlock

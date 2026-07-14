@@ -21,6 +21,7 @@ module Amazonka.BedrockRuntime.Types.Message where
 
 import Amazonka.BedrockRuntime.Types.ContentBlock
 import Amazonka.BedrockRuntime.Types.ConversationRole
+import Amazonka.BedrockRuntime.Types.Document
 import qualified Amazonka.Core as Core
 import qualified Amazonka.Core.Lens.Internal as Lens
 import qualified Amazonka.Data as Data

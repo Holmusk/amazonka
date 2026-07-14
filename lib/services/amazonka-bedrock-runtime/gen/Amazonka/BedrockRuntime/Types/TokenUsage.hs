@@ -20,6 +20,7 @@
 module Amazonka.BedrockRuntime.Types.TokenUsage where
 
 import Amazonka.BedrockRuntime.Types.CacheDetail
+import Amazonka.BedrockRuntime.Types.Document
 import qualified Amazonka.Core as Core
 import qualified Amazonka.Core.Lens.Internal as Lens
 import qualified Amazonka.Data as Data

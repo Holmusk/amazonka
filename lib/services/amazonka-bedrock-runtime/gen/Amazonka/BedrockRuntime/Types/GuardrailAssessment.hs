@@ -20,6 +20,7 @@
 module Amazonka.BedrockRuntime.Types.GuardrailAssessment where
 
 import Amazonka.BedrockRuntime.Types.AppliedGuardrailDetails
+import Amazonka.BedrockRuntime.Types.Document
 import Amazonka.BedrockRuntime.Types.GuardrailAutomatedReasoningPolicyAssessment
 import Amazonka.BedrockRuntime.Types.GuardrailContentPolicyAssessment
 import Amazonka.BedrockRuntime.Types.GuardrailContextualGroundingPolicyAssessment

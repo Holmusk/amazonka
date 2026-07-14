@@ -21,6 +21,7 @@ module Amazonka.BedrockRuntime.Types.AudioBlock where
 
 import Amazonka.BedrockRuntime.Types.AudioFormat
 import Amazonka.BedrockRuntime.Types.AudioSource
+import Amazonka.BedrockRuntime.Types.Document
 import Amazonka.BedrockRuntime.Types.ErrorBlock
 import qualified Amazonka.Core as Core
 import qualified Amazonka.Core.Lens.Internal as Lens

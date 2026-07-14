@@ -20,6 +20,7 @@
 module Amazonka.BedrockRuntime.Types.Tool where
 
 import Amazonka.BedrockRuntime.Types.CachePointBlock
+import Amazonka.BedrockRuntime.Types.Document
 import Amazonka.BedrockRuntime.Types.SystemTool
 import Amazonka.BedrockRuntime.Types.ToolSpecification
 import qualified Amazonka.Core as Core

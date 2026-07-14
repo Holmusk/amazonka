@@ -20,6 +20,7 @@
 module Amazonka.BedrockRuntime.Types.CountTokensInput where
 
 import Amazonka.BedrockRuntime.Types.ConverseTokensRequest
+import Amazonka.BedrockRuntime.Types.Document
 import Amazonka.BedrockRuntime.Types.InvokeModelTokensRequest
 import qualified Amazonka.Core as Core
 import qualified Amazonka.Core.Lens.Internal as Lens

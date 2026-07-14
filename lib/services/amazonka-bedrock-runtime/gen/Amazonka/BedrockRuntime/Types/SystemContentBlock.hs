@@ -20,6 +20,7 @@
 module Amazonka.BedrockRuntime.Types.SystemContentBlock where
 
 import Amazonka.BedrockRuntime.Types.CachePointBlock
+import Amazonka.BedrockRuntime.Types.Document
 import Amazonka.BedrockRuntime.Types.GuardrailConverseContentBlock
 import qualified Amazonka.Core as Core
 import qualified Amazonka.Core.Lens.Internal as Lens
