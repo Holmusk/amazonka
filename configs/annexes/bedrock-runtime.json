@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "serviceAbbreviation": "BedrockRuntime"
+  },
+  "shapes": {
+    "Body": {
+      "sensitive": false
+    }
+  },
+  "operations": {
+    "ConverseStream": {
+      "deprecated": true
+    },
+    "InvokeModelWithResponseStream": {
+      "deprecated": true
+    },
+    "InvokeModelWithBidirectionalStream": {
+      "deprecated": true
+    }
+  }
+}
