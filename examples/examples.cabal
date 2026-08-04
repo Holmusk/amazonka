@@ -36,6 +36,7 @@ library
     , amazonka                  >=2.0 && <2.1
     , amazonka-apigateway
     , amazonka-bedrock-runtime
+    , amazonka-core             >=2.0 && <2.1
     , amazonka-dynamodb
     , amazonka-ec2
     , amazonka-s3
