@@ -113,8 +113,11 @@ generate → build:
   their members include *exception* shapes, and the generated modules import
   `Amazonka.BedrockRuntime.Types.InternalServerException` etc., which don't
   exist (exceptions are rendered as error matchers in `Types.hs`, not as type
-  modules). Amazonka has no eventstream decoder anyway, so these operations
-  could never work at runtime; dropping them entirely is the honest option.
+  modules). `ConverseStream` and `InvokeModelWithResponseStream` have since
+  been implemented *by hand* on top of `Amazonka.Data.EventStream` in
+  amazonka-core (see `lib/services/amazonka-bedrock-runtime/HANDWRITTEN.md`),
+  so these annex entries now serve to stop the generator emitting broken
+  duplicates of the hand-written modules — keep them.
 
 - **`Body` made non-sensitive** — `InvokeModel`'s request/response payload is
   a blob marked `"sensitive": true`. The generated response parser produces a
@@ -135,9 +138,10 @@ Output lands in `lib/services/amazonka-bedrock-runtime/`. When re-running
 after an annex change, `rm -rf lib/services/amazonka-bedrock-runtime` first —
 the script only replaces the `gen/` subdirectory wholesale, so files belonging
 to since-removed operations (e.g. fixtures) would otherwise linger. Note that
-this also deletes the hand-written `src/Amazonka/BedrockRuntime/Types/Document.hs`
-(see step 2) — restore it afterwards with
-`git checkout -- lib/services/amazonka-bedrock-runtime/src`.
+this also deletes *all* hand-written modules under `src/` (`Document` and the
+event stream operations/types) — restore them afterwards with
+`git checkout -- lib/services/amazonka-bedrock-runtime/src` and re-apply the
+wiring described in `lib/services/amazonka-bedrock-runtime/HANDWRITTEN.md`.
 
 ## 5. Build it
 
@@ -173,8 +177,13 @@ API shape notes for writing code against the generated library:
 
 ## Known limitations of the generated library
 
-- The three streaming operations are absent by design (no eventstream support
-  in amazonka-core).
+- ~~The three streaming operations are absent by design (no eventstream
+  support in amazonka-core)~~ — `ConverseStream` and
+  `InvokeModelWithResponseStream` are now maintained by hand on top of
+  amazonka-core's `Amazonka.Data.EventStream` (see
+  `lib/services/amazonka-bedrock-runtime/HANDWRITTEN.md`). Only
+  `InvokeModelWithBidirectionalStream` remains dropped (bidirectional
+  streaming).
 - Union shapes (`ContentBlock`, `ConverseOutput`, ... — `"union": true` in the
   model) degrade to all-`Maybe` records. Wire-compatible, but the one-member
   invariant isn't enforced by the types.

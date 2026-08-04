@@ -34,6 +34,32 @@ module Amazonka.BedrockRuntime.Types
     -- * Re-exported Types
     module Amazonka.BedrockRuntime.Types.Document,
 
+    -- * Re-exported hand-written event stream types
+    --
+    -- | The @ConverseStream@ \/ @InvokeModelWithResponseStream@ shapes are
+    -- maintained by hand (the code generator cannot render
+    -- @vnd.amazon.eventstream@ operations). See @HANDWRITTEN.md@.
+    module Amazonka.BedrockRuntime.Types.CitationSourceContentDelta,
+    module Amazonka.BedrockRuntime.Types.CitationsDelta,
+    module Amazonka.BedrockRuntime.Types.ContentBlockDelta,
+    module Amazonka.BedrockRuntime.Types.ContentBlockDeltaEvent,
+    module Amazonka.BedrockRuntime.Types.ContentBlockStart,
+    module Amazonka.BedrockRuntime.Types.ContentBlockStartEvent,
+    module Amazonka.BedrockRuntime.Types.ContentBlockStopEvent,
+    module Amazonka.BedrockRuntime.Types.ConverseStreamMetadataEvent,
+    module Amazonka.BedrockRuntime.Types.ConverseStreamMetrics,
+    module Amazonka.BedrockRuntime.Types.ConverseStreamOutput,
+    module Amazonka.BedrockRuntime.Types.ConverseStreamTrace,
+    module Amazonka.BedrockRuntime.Types.GuardrailStreamConfiguration,
+    module Amazonka.BedrockRuntime.Types.GuardrailStreamProcessingMode,
+    module Amazonka.BedrockRuntime.Types.MessageStartEvent,
+    module Amazonka.BedrockRuntime.Types.MessageStopEvent,
+    module Amazonka.BedrockRuntime.Types.PayloadPart,
+    module Amazonka.BedrockRuntime.Types.ReasoningContentBlockDelta,
+    module Amazonka.BedrockRuntime.Types.ResponseStream,
+    module Amazonka.BedrockRuntime.Types.ToolUseBlockDelta,
+    module Amazonka.BedrockRuntime.Types.ToolUseBlockStart,
+
     -- * AsyncInvokeStatus
     AsyncInvokeStatus (..),
 
@@ -1031,12 +1057,23 @@ import Amazonka.BedrockRuntime.Types.Citation
 import Amazonka.BedrockRuntime.Types.CitationGeneratedContent
 import Amazonka.BedrockRuntime.Types.CitationLocation
 import Amazonka.BedrockRuntime.Types.CitationSourceContent
+import Amazonka.BedrockRuntime.Types.CitationSourceContentDelta
 import Amazonka.BedrockRuntime.Types.CitationsConfig
 import Amazonka.BedrockRuntime.Types.CitationsContentBlock
+import Amazonka.BedrockRuntime.Types.CitationsDelta
 import Amazonka.BedrockRuntime.Types.ContentBlock
+import Amazonka.BedrockRuntime.Types.ContentBlockDelta
+import Amazonka.BedrockRuntime.Types.ContentBlockDeltaEvent
+import Amazonka.BedrockRuntime.Types.ContentBlockStart
+import Amazonka.BedrockRuntime.Types.ContentBlockStartEvent
+import Amazonka.BedrockRuntime.Types.ContentBlockStopEvent
 import Amazonka.BedrockRuntime.Types.ConversationRole
 import Amazonka.BedrockRuntime.Types.ConverseMetrics
 import Amazonka.BedrockRuntime.Types.ConverseOutput
+import Amazonka.BedrockRuntime.Types.ConverseStreamMetadataEvent
+import Amazonka.BedrockRuntime.Types.ConverseStreamMetrics
+import Amazonka.BedrockRuntime.Types.ConverseStreamOutput
+import Amazonka.BedrockRuntime.Types.ConverseStreamTrace
 import Amazonka.BedrockRuntime.Types.ConverseTokensRequest
 import Amazonka.BedrockRuntime.Types.ConverseTrace
 import Amazonka.BedrockRuntime.Types.CountTokensInput
@@ -1130,6 +1167,8 @@ import Amazonka.BedrockRuntime.Types.GuardrailPiiEntityType
 import Amazonka.BedrockRuntime.Types.GuardrailRegexFilter
 import Amazonka.BedrockRuntime.Types.GuardrailSensitiveInformationPolicyAction
 import Amazonka.BedrockRuntime.Types.GuardrailSensitiveInformationPolicyAssessment
+import Amazonka.BedrockRuntime.Types.GuardrailStreamConfiguration
+import Amazonka.BedrockRuntime.Types.GuardrailStreamProcessingMode
 import Amazonka.BedrockRuntime.Types.GuardrailTextBlock
 import Amazonka.BedrockRuntime.Types.GuardrailTextCharactersCoverage
 import Amazonka.BedrockRuntime.Types.GuardrailTopic
@@ -1148,17 +1187,22 @@ import Amazonka.BedrockRuntime.Types.InferenceConfiguration
 import Amazonka.BedrockRuntime.Types.InvokeModelTokensRequest
 import Amazonka.BedrockRuntime.Types.JsonSchemaDefinition
 import Amazonka.BedrockRuntime.Types.Message
+import Amazonka.BedrockRuntime.Types.MessageStartEvent
+import Amazonka.BedrockRuntime.Types.MessageStopEvent
 import Amazonka.BedrockRuntime.Types.ModelInputPayload
 import Amazonka.BedrockRuntime.Types.OutputConfig
 import Amazonka.BedrockRuntime.Types.OutputFormat
 import Amazonka.BedrockRuntime.Types.OutputFormatStructure
 import Amazonka.BedrockRuntime.Types.OutputFormatType
 import Amazonka.BedrockRuntime.Types.PerformanceConfigLatency
+import Amazonka.BedrockRuntime.Types.PayloadPart
 import Amazonka.BedrockRuntime.Types.PerformanceConfiguration
 import Amazonka.BedrockRuntime.Types.PromptRouterTrace
 import Amazonka.BedrockRuntime.Types.PromptVariableValues
 import Amazonka.BedrockRuntime.Types.ReasoningContentBlock
+import Amazonka.BedrockRuntime.Types.ReasoningContentBlockDelta
 import Amazonka.BedrockRuntime.Types.ReasoningTextBlock
+import Amazonka.BedrockRuntime.Types.ResponseStream
 import Amazonka.BedrockRuntime.Types.S3Location
 import Amazonka.BedrockRuntime.Types.SearchResultBlock
 import Amazonka.BedrockRuntime.Types.SearchResultContentBlock
@@ -1182,6 +1226,8 @@ import Amazonka.BedrockRuntime.Types.ToolResultContentBlock
 import Amazonka.BedrockRuntime.Types.ToolResultStatus
 import Amazonka.BedrockRuntime.Types.ToolSpecification
 import Amazonka.BedrockRuntime.Types.ToolUseBlock
+import Amazonka.BedrockRuntime.Types.ToolUseBlockDelta
+import Amazonka.BedrockRuntime.Types.ToolUseBlockStart
 import Amazonka.BedrockRuntime.Types.ToolUseType
 import Amazonka.BedrockRuntime.Types.Trace
 import Amazonka.BedrockRuntime.Types.VideoBlock

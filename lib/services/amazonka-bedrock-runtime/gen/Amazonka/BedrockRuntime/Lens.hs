@@ -52,6 +52,23 @@ module Amazonka.BedrockRuntime.Lens
     converseResponse_usage,
     converseResponse_metrics,
 
+    -- ** ConverseStream (hand-written, event stream)
+    converseStream_additionalModelRequestFields,
+    converseStream_additionalModelResponseFieldPaths,
+    converseStream_guardrailConfig,
+    converseStream_inferenceConfig,
+    converseStream_messages,
+    converseStream_outputConfig,
+    converseStream_performanceConfig,
+    converseStream_promptVariables,
+    converseStream_requestMetadata,
+    converseStream_serviceTier,
+    converseStream_system,
+    converseStream_toolConfig,
+    converseStream_modelId,
+    converseStreamResponse_httpStatus,
+    converseStreamResponse_stream,
+
     -- ** CountTokens
     countTokens_modelId,
     countTokens_input,
@@ -94,6 +111,23 @@ module Amazonka.BedrockRuntime.Lens
     invokeModelResponse_httpStatus,
     invokeModelResponse_body,
     invokeModelResponse_contentType,
+
+    -- ** InvokeModelWithResponseStream (hand-written, event stream)
+    invokeModelWithResponseStream_accept,
+    invokeModelWithResponseStream_body,
+    invokeModelWithResponseStream_contentType,
+    invokeModelWithResponseStream_guardrailIdentifier,
+    invokeModelWithResponseStream_guardrailVersion,
+    invokeModelWithResponseStream_performanceConfigLatency,
+    invokeModelWithResponseStream_requestMetadata,
+    invokeModelWithResponseStream_serviceTier,
+    invokeModelWithResponseStream_trace,
+    invokeModelWithResponseStream_modelId,
+    invokeModelWithResponseStreamResponse_performanceConfigLatency,
+    invokeModelWithResponseStreamResponse_serviceTier,
+    invokeModelWithResponseStreamResponse_httpStatus,
+    invokeModelWithResponseStreamResponse_body,
+    invokeModelWithResponseStreamResponse_contentType,
 
     -- ** ListAsyncInvokes
     listAsyncInvokes_maxResults,
@@ -707,10 +741,12 @@ where
 
 import Amazonka.BedrockRuntime.ApplyGuardrail
 import Amazonka.BedrockRuntime.Converse
+import Amazonka.BedrockRuntime.ConverseStream
 import Amazonka.BedrockRuntime.CountTokens
 import Amazonka.BedrockRuntime.GetAsyncInvoke
 import Amazonka.BedrockRuntime.InvokeGuardrailChecks
 import Amazonka.BedrockRuntime.InvokeModel
+import Amazonka.BedrockRuntime.InvokeModelWithResponseStream
 import Amazonka.BedrockRuntime.ListAsyncInvokes
 import Amazonka.BedrockRuntime.StartAsyncInvoke
 import Amazonka.BedrockRuntime.Types.AnyToolChoice

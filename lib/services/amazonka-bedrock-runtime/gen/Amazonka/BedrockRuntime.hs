@@ -74,6 +74,12 @@ module Amazonka.BedrockRuntime
     ConverseResponse (ConverseResponse'),
     newConverseResponse,
 
+    -- ** ConverseStream (hand-written, event stream)
+    ConverseStream (ConverseStream'),
+    newConverseStream,
+    ConverseStreamResponse (ConverseStreamResponse'),
+    newConverseStreamResponse,
+
     -- ** CountTokens
     CountTokens (CountTokens'),
     newCountTokens,
@@ -98,6 +104,14 @@ module Amazonka.BedrockRuntime
     InvokeModelResponse (InvokeModelResponse'),
     newInvokeModelResponse,
 
+    -- ** InvokeModelWithResponseStream (hand-written, event stream)
+    InvokeModelWithResponseStream
+      (InvokeModelWithResponseStream'),
+    newInvokeModelWithResponseStream,
+    InvokeModelWithResponseStreamResponse
+      (InvokeModelWithResponseStreamResponse'),
+    newInvokeModelWithResponseStreamResponse,
+
     -- ** ListAsyncInvokes (Paginated)
     ListAsyncInvokes (ListAsyncInvokes'),
     newListAsyncInvokes,
@@ -114,6 +128,28 @@ module Amazonka.BedrockRuntime
 
     -- ** Common
     module Amazonka.BedrockRuntime.Types.Document,
+
+    -- ** Event stream types (hand-written)
+    module Amazonka.BedrockRuntime.Types.CitationSourceContentDelta,
+    module Amazonka.BedrockRuntime.Types.CitationsDelta,
+    module Amazonka.BedrockRuntime.Types.ContentBlockDelta,
+    module Amazonka.BedrockRuntime.Types.ContentBlockDeltaEvent,
+    module Amazonka.BedrockRuntime.Types.ContentBlockStart,
+    module Amazonka.BedrockRuntime.Types.ContentBlockStartEvent,
+    module Amazonka.BedrockRuntime.Types.ContentBlockStopEvent,
+    module Amazonka.BedrockRuntime.Types.ConverseStreamMetadataEvent,
+    module Amazonka.BedrockRuntime.Types.ConverseStreamMetrics,
+    module Amazonka.BedrockRuntime.Types.ConverseStreamOutput,
+    module Amazonka.BedrockRuntime.Types.ConverseStreamTrace,
+    module Amazonka.BedrockRuntime.Types.GuardrailStreamConfiguration,
+    module Amazonka.BedrockRuntime.Types.GuardrailStreamProcessingMode,
+    module Amazonka.BedrockRuntime.Types.MessageStartEvent,
+    module Amazonka.BedrockRuntime.Types.MessageStopEvent,
+    module Amazonka.BedrockRuntime.Types.PayloadPart,
+    module Amazonka.BedrockRuntime.Types.ReasoningContentBlockDelta,
+    module Amazonka.BedrockRuntime.Types.ResponseStream,
+    module Amazonka.BedrockRuntime.Types.ToolUseBlockDelta,
+    module Amazonka.BedrockRuntime.Types.ToolUseBlockStart,
 
     -- ** AsyncInvokeStatus
     AsyncInvokeStatus (..),
@@ -771,15 +807,37 @@ where
 
 import Amazonka.BedrockRuntime.ApplyGuardrail
 import Amazonka.BedrockRuntime.Converse
+import Amazonka.BedrockRuntime.ConverseStream
 import Amazonka.BedrockRuntime.CountTokens
 import Amazonka.BedrockRuntime.GetAsyncInvoke
 import Amazonka.BedrockRuntime.InvokeGuardrailChecks
 import Amazonka.BedrockRuntime.InvokeModel
+import Amazonka.BedrockRuntime.InvokeModelWithResponseStream
 import Amazonka.BedrockRuntime.Lens
 import Amazonka.BedrockRuntime.ListAsyncInvokes
 import Amazonka.BedrockRuntime.StartAsyncInvoke
 import Amazonka.BedrockRuntime.Types
+import Amazonka.BedrockRuntime.Types.CitationSourceContentDelta
+import Amazonka.BedrockRuntime.Types.CitationsDelta
+import Amazonka.BedrockRuntime.Types.ContentBlockDelta
+import Amazonka.BedrockRuntime.Types.ContentBlockDeltaEvent
+import Amazonka.BedrockRuntime.Types.ContentBlockStart
+import Amazonka.BedrockRuntime.Types.ContentBlockStartEvent
+import Amazonka.BedrockRuntime.Types.ContentBlockStopEvent
+import Amazonka.BedrockRuntime.Types.ConverseStreamMetadataEvent
+import Amazonka.BedrockRuntime.Types.ConverseStreamMetrics
+import Amazonka.BedrockRuntime.Types.ConverseStreamOutput
+import Amazonka.BedrockRuntime.Types.ConverseStreamTrace
 import Amazonka.BedrockRuntime.Types.Document
+import Amazonka.BedrockRuntime.Types.GuardrailStreamConfiguration
+import Amazonka.BedrockRuntime.Types.GuardrailStreamProcessingMode
+import Amazonka.BedrockRuntime.Types.MessageStartEvent
+import Amazonka.BedrockRuntime.Types.MessageStopEvent
+import Amazonka.BedrockRuntime.Types.PayloadPart
+import Amazonka.BedrockRuntime.Types.ReasoningContentBlockDelta
+import Amazonka.BedrockRuntime.Types.ResponseStream
+import Amazonka.BedrockRuntime.Types.ToolUseBlockDelta
+import Amazonka.BedrockRuntime.Types.ToolUseBlockStart
 import Amazonka.BedrockRuntime.Waiters
 
 -- $errors

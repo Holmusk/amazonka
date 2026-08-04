@@ -8,6 +8,7 @@
 module Main (main) where
 
 import qualified Test.Amazonka.Data.Base64 as Base64
+import qualified Test.Amazonka.Data.EventStream as EventStream
 import qualified Test.Amazonka.Data.List as List
 import qualified Test.Amazonka.Data.Maybe as Maybe
 import qualified Test.Amazonka.Data.Numeric as Numeric
@@ -31,7 +32,8 @@ main =
             Time.tests,
             Base64.tests,
             Maybe.tests,
-            Query.tests
+            Query.tests,
+            EventStream.tests
           ],
         testGroup
           "paths"
