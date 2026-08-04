@@ -78,6 +78,7 @@ library
     Amazonka.Data.Base64
     Amazonka.Data.Body
     Amazonka.Data.ByteString
+    Amazonka.Data.EventStream
     Amazonka.Data.Headers
     Amazonka.Data.JSON
     Amazonka.Data.Log
@@ -138,6 +139,7 @@ test-suite tests
   other-modules:
     Test.Amazonka.Arbitrary
     Test.Amazonka.Data.Base64
+    Test.Amazonka.Data.EventStream
     Test.Amazonka.Data.List
     Test.Amazonka.Data.Maybe
     Test.Amazonka.Data.Numeric

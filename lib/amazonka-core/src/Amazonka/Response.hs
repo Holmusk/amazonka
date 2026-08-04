@@ -24,17 +24,19 @@ module Amazonka.Response
     receiveJSON,
     receiveBytes,
     receiveBody,
+    receiveEventStream,
   )
 where
 
 import Amazonka.Data
+import qualified Amazonka.Data.EventStream as EventStream
 import Amazonka.Prelude hiding (error)
 import Amazonka.Types
 import qualified Control.Monad.Trans.Except as Except
 import Control.Monad.Trans.Resource (liftResourceT)
 import qualified Data.Aeson as Aeson
 import qualified Data.ByteString.Lazy as LBS
-import Data.Conduit ()
+import Data.Conduit ((.|))
 import qualified Data.Conduit as Conduit
 import qualified Data.Conduit.Binary as Conduit.Binary
 import Data.Functor (($>))
@@ -118,6 +120,27 @@ receiveBody ::
 receiveBody f _ =
   stream $ \_ s h x ->
     pure (f s h (ResponseBody x))
+
+-- | Receive an @application\/vnd.amazon.eventstream@ response body as a
+-- typed stream of events.
+--
+-- Like 'receiveBody', this hands a still-streaming body to the caller and
+-- thus does not close the connection. Decoding (and both CRC32
+-- validations) happen incrementally as the returned
+-- 'EventStream.EventStream' is consumed, which throws
+-- 'EventStream.EventStreamError' on malformed frames or in-stream
+-- @exception@\/@error@ messages.
+receiveEventStream ::
+  (MonadResource m, EventStream.FromEventStream b) =>
+  (Int -> ResponseHeaders -> EventStream.EventStream b -> Either String (AWSResponse a)) ->
+  (ByteStringLazy -> IO ByteStringLazy) ->
+  Service ->
+  Proxy a ->
+  ClientResponse ClientBody ->
+  m (Either Error (ClientResponse (AWSResponse a)))
+receiveEventStream f _ =
+  stream $ \_ s h x ->
+    pure (f s h (EventStream.EventStream (x .| EventStream.decodeEvents)))
 
 -- | Deserialise an entire response body, such as an XML or JSON payload.
 deserialise ::
