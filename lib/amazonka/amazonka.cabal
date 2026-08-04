@@ -98,7 +98,8 @@ library
     Amazonka.Send
 
   reexported-modules:
-    Amazonka.Data, Amazonka.Types, Amazonka.Bytes, Amazonka.Endpoint, Amazonka.Crypto
+    Amazonka.Data, Amazonka.Data.EventStream, Amazonka.Types, Amazonka.Bytes, Amazonka.Endpoint,
+    Amazonka.Crypto
 
   build-depends:
     , aeson                 ^>=1.5.0.0  || ^>=2.0 || ^>=2.1 || ^>=2.2 || ^>=2.3

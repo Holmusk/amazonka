@@ -69,8 +69,9 @@ Tests (hand-added in the scaffolded hand-test slot):
   exactly one member arrives per stream event.
 - The **exception members** of those unions (`internalServerException`,
   `modelStreamErrorException`, `validationException`,
-  `throttlingException`, `modelTimeoutException`,
-  `serviceUnavailableException`) are deliberately *not* constructors.
+  `throttlingException`, `serviceUnavailableException`, and — for
+  `ResponseStream` only — `modelTimeoutException`) are deliberately *not*
+  constructors.
   In-stream exceptions arrive as `:message-type: exception` frames and are
   thrown as `EventStreamError` (`EventStreamException`) while the stream
   is consumed. This is what lets these modules exist at all — amazonka

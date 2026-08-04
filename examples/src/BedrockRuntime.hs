@@ -57,8 +57,8 @@ ask reg prompt = do
       Nothing -> say "The response contained no message."
       Just reply ->
         for_ (reply ^. #content) $ \block ->
-          for_ (block ^. #text) $ \text ->
-            say $ "Claude says: " <> text
+          for_ (block ^. #text) $ \t ->
+            say $ "Claude says: " <> t
 
     say $ "Stop reason: " <> Text.pack (show (response_ ^. #stopReason))
     say $ "Token usage: " <> Text.pack (show (response_ ^. #usage))
